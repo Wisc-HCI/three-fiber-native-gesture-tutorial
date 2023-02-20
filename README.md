@@ -2,7 +2,7 @@
 
 ## Introduction
 
-[React-three-fiber](https://github.com/pmndrs/react-three-fiber) is a React renderer for `Three.js`. It allows us to express `Three.js` in JSX, and there are also many helper functions available in [react-three/drei](https://github.com/pmndrs/drei). However, the neither `react-three-fiber` nor `react-three/drei` offer an easy-to-use way for gesture interaction in React Native. In this tutorial (probably the first tutorial on the internet) you will learn how to implement gesture control, especially the gesture control for cameras, in `react-three-fiber` in React Native.
+[React-three-fiber](https://github.com/pmndrs/react-three-fiber) is a React renderer for `Three.js`. It allows us to express `Three.js` in JSX, and there are also many helper functions available in [react-three/drei](https://github.com/pmndrs/drei). However, neither `react-three-fiber` nor `react-three/drei` offer an easy-to-use way for gesture interaction in React Native. In this tutorial (probably the first tutorial on the internet) you will learn how to implement gesture control, especially the gesture control for cameras, in `react-three-fiber` in React Native.
 
 So, the core question is: if `react-three-fiber` and `react-three/drei` don't have the ability for gesture control in React Native, then how can we implement it on our own? The answer is quite tricky: we can have a `<View>` over the `<Canvas>` component. Then we monitor the gestures on the `<View>` instead of any `Three.js` components, and lastly, we handle the gestures by changing the status of those `Three.js` components in response.
 
@@ -324,4 +324,10 @@ const styles = StyleSheet.create({
 });
 ```
 
-The final work is not perfect, because we didn't offer a way to rotate the camera or change the camera's facing' direction. However, it is very simple to implement it - just pick another gesture and follow the same way. Try it yourself!
+The final work is not perfect, because we didn't offer a way to rotate the camera or change the camera's facing direction. However, it is very simple to implement it - just pick another gesture and follow the same way. Try it yourself!
+
+## Demo Project
+
+Here is the link of the demo project:
+
+https://github.com/migodz/three-fiber-native-gesture-demo
