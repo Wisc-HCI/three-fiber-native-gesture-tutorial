@@ -4,7 +4,7 @@
 
 [React-three-fiber](https://github.com/pmndrs/react-three-fiber) is a React renderer for `Three.js`. It allows us to express `Three.js` in JSX, and there are also many helper functions available in [react-three/drei](https://github.com/pmndrs/drei). However, neither `react-three-fiber` nor `react-three/drei` offer an easy-to-use way for gesture interaction in React Native. In this tutorial (probably the first tutorial on the internet) you will learn how to implement gesture control, especially the gesture control for cameras, in `react-three-fiber` in React Native.
 
-So, the core question is: if `react-three-fiber` and `react-three/drei` don't have the ability for gesture control in React Native, then how can we implement it on our own? The answer is quite tricky: we can have a `<View>` over the `<Canvas>` component. Then we monitor the gestures on the `<View>` instead of any `Three.js` components, and lastly, we handle the gestures by changing the status of those `Three.js` components in response.
+So, the core question is: if `react-three-fiber` and `react-three/drei` don't have the ability for gesture control in React Native, then how can we implement it on our own? The answer is quite tricky: we can wrap the `<Canvas>` component with a `<View>`. Then we monitor the gestures on the `<View>` instead of any `Three.js` components, and lastly, we handle the gestures by changing the status of those `Three.js` components in response.
 
 ## Use react-native-gesture-handler
 
@@ -32,10 +32,10 @@ export default function App() {
 
   const pinchGesture = Gesture.Pinch()
     .onUpdate((e) => {
-        // handle pan gesture when pinching
+        // handle pinch gesture when pinching
     })
     .onEnd(() => {
-        // handle pan gesture when gesture is done
+        // handle pinch gesture when gesture is done
     });
 
   // combine gestures together
